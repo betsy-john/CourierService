@@ -1,11 +1,17 @@
 var express = require('express')
+var multer = require('multer');
+var upload = multer();
 var app = express()
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var index = require('./serverFiles/index.js');
-
+// for parsing multipart/form-data
+app.use(upload.array());
 //adding statis  files
 app.use(express.static('public'));
+
+//adding image files
+app.use(express.static('images'));
 //To parse URL encoded data
 app.use(bodyParser.urlencoded({ extended: false }))
 
