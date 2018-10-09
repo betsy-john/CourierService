@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var index = require('./serverFiles/index.js');
 const path = require('path')
 const Sequelize = require(path.resolve('./serverFiles/databaseFiles/db_connection.js'));
+const port = 8080;
 // for parsing multipart/form-data
 app.use(upload.array());
 //adding statis  files
@@ -27,5 +28,10 @@ app.set('views','./serverFiles/views');
 app.get('/first_template', function(req, res){
    res.render('first_view');
 });
- 
-app.listen(8080)
+
+app.listen(port, (err) => {
+  if (err) {
+    return console.log('something bad happened', err)
+  }
+  console.log(`server is listening on ${port}`)
+})
