@@ -5,6 +5,8 @@ var app = express()
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var index = require('./serverFiles/index.js');
+const path = require('path')
+const Sequelize = require(path.resolve('./serverFiles/databaseFiles/db_connection.js'));
 // for parsing multipart/form-data
 app.use(upload.array());
 //adding statis  files
