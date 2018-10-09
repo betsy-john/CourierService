@@ -1,6 +1,13 @@
 var express = require('express')
 var app = express()
+var bodyParser = require('body-parser')
 var index = require('./serverFiles/index.js');
+
+//To parse URL encoded data
+app.use(bodyParser.urlencoded({ extended: false }))
+
+//To parse json data
+app.use(bodyParser.json())
 
 // app.use('/index', index);
 //time logger 
