@@ -1,0 +1,8 @@
+{
+  "name":"Courier Service",
+  "description":"A node.js application using express",
+  "repository":"https://github.com/betsy-john/CourierService",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs",
+  "logo": "https://image.flaticon.com/icons/svg/95/95618.svg"
+}
