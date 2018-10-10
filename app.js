@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./serverFiles/routes/index.js');
 var usersRouter = require('./serverFiles/routes/users');
+const Sequelize = require(path.resolve('./serverFiles/databaseFiles/db_connection.js'));
 
 var app = express();
 
@@ -17,7 +18,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
