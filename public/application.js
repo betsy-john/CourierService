@@ -1,9 +1,9 @@
-angular.module('CourierServices', ['ui.router', 'ui.bootstrap' , 'ngMaterial'])
+angular.module('CourierServices', ['ui.router', 'ngMaterial', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
 angular.module('CourierServices').config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
-    .state('main', {
+    .state('login', {
       url: '/',
-      templateUrl: 'donor-ask.html'
+      templateUrl: '/login/login.html'
     })
 })
