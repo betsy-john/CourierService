@@ -2,8 +2,16 @@ angular.module('CourierServices', ['ui.router', 'ngMaterial', 'ngAnimate', 'ngSa
 angular.module('CourierServices').config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
-    .state('login', {
+    .state('home', {
       url: '/',
-      templateUrl: '/login/login.html'
+      templateUrl: '/welcome/welcome.html',
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: '/welcome/welcome.html',
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: '/welcome/welcome.html',
     })
 })
