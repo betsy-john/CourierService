@@ -103,10 +103,12 @@ h2, .beta {
   }
 }
 
-.subhead, .meta {
+.subhead {
   color: #7b8993;
 }
-
+.meta {
+  color: #131414;
+}
 .promo {
   text-align: center;
 }

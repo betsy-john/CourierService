@@ -18,13 +18,16 @@
   <link href="bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css">
   <!-- css -->
-  <link rel="stylesheet" href="/welcome/welcome.css">
   <link rel="stylesheet" href="/stylesheets/common.css">
+  <link rel="stylesheet" href="/welcome/welcome.css">
+  <link rel="stylesheet" href="/register/register.css">
+  <link rel="stylesheet" href="/login/login.css">
+  <link rel="stylesheet" href="/dashboard/dashboard.css">
 
 
 </head>
 
-<body class="courier-service col-sm-12">
+<body class="courier-service col-sm-12 login-background">
   <ui-view></ui-view>
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
@@ -43,7 +46,12 @@
   <!-- login  -->
   <script src="/login/login-controller.js"></script>
   <script src="/login/login-service.js"></script>
-
+  <!-- register -->
+  <script src="/register/register-controller.js"></script>
+  <script src="/register/register-service.js"></script>
+  <!--dashboard -->
+  <script src="/dashboard/dashboard-controller.js"></script>
+  <script src="/dashboard/dashboard-service.js"></script>
 
 </body>
 
