@@ -8,10 +8,17 @@ angular.module('CourierServices').config(function ($stateProvider, $urlRouterPro
     })
     .state('login', {
       url: '/login',
-      templateUrl: '/welcome/welcome.html',
+      templateUrl: '/login/login.html',
+      controller: 'loginController as vm'
     })
     .state('register', {
       url: '/register',
-      templateUrl: '/welcome/welcome.html',
+      templateUrl: '/register/register.html',
+      controller: 'registerController as vm'
+    })
+    .state('dashboard', {
+      url: '/dashboard',
+      templateUrl: '/dashboard/dashboard.html',
+      controller: 'dashboardController as vm'
     })
 })

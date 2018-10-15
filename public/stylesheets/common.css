@@ -4,3 +4,9 @@
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: transparent;
 }
+.login-background {
+  background-image: url("/assets/images/catBack.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+}
