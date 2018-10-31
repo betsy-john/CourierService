@@ -21,4 +21,9 @@ angular.module('CourierServices').config(function ($stateProvider, $urlRouterPro
       templateUrl: '/dashboard/dashboard.html',
       controller: 'dashboardController as vm'
     })
+    .state('profile', {
+      url: '/profile',
+      templateUrl: '/profile/profile.html',
+      controller: 'profileController as vm'
+    })
 })
