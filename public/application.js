@@ -1,5 +1,7 @@
-angular.module('CourierServices', ['ui.router', 'ngMaterial', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
-angular.module('CourierServices').config(function ($stateProvider, $urlRouterProvider) {
+angular.module('CourierServices', ['ui.router', 'ngMaterial', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngResource'])
+angular.module('CourierServices').config(function ($stateProvider, $urlRouterProvider, $resourceProvider) {
+   // Don't strip trailing slashes from calculated URLs
+  $resourceProvider.defaults.stripTrailingSlashes = false;
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('home', {
