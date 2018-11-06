@@ -4,10 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
-var indexRouter = require('./serverFiles/routes/index.js');
-var usersRouter = require('./serverFiles/routes/users');
 const Sequelize = require(path.resolve('./serverFiles/databaseFiles/db_connection.js'));
-
+const indexRouter = require(path.resolve('./serverFiles/routes/index.js'));
+const usersRouter = require(path.resolve('./serverFiles/routes/register.js'));
 var app = express();
 
 // view engine setup
@@ -24,7 +23,7 @@ app.use(express.static('public'));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/register', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
