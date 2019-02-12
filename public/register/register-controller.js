@@ -1,17 +1,17 @@
-angular.module('CourierServices').controller('registerController', function ($state, registerService) {
-  var vm = this;
-  vm.registerUser = {};
-  vm.registeredUser = (registeredUserDetails) => {
-    registerService.postRegister(registeredUserDetails);
+angular.module('CourierServices').controller('registerController', function ($scope, $state, registerService) {
+  
+  var self = this;
+  self.user = { name: '', username: '', address: '', email: '',Password: ''}; 
+
+  self.registeredUser = () => {
+    registerService.postRegister(self.user);
+     self.reset();
     $state.go('login')
   }
-  vm.submitForm = function () {
-    // check to make sure the form is completely valid
-    if (vm.userForm.$valid) {
-      alert('our form is amazing');
-    }
 
-  };
-
+  self.reset = function () {
+    self.user = { name: '', username: '', address: '', email: '',Password: ''};
+    $scope.myForm.$setPristine(); //reset Form
+  }
 
 })

@@ -1,57 +1,74 @@
 <div class="container">
   <div class="row">
-      <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 mx-auto borders">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 mx-auto borders">
 
-        <h2>Hi! <small>We will be always at your service.</small></h2>
-        <hr class="colorgraph">
-        <form name="userForm" ng-submit="vm.submitForm()" novalidate>
-
-              <!-- NAME -->
-              <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-                  <label>Name</label>
-                  <input type="text" name="name" class="form-control" ng-model="vm.registerUser.name" required>
-                  <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
-              </div>
-
-              <!-- USERNAME -->
-              <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-                  <label>Username</label>
-                  <input type="text" name="username" class="form-control" ng-model="vm.registerUser.username" ng-minlength="3" ng-maxlength="8" required>
-                  <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
-                  <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
-              </div>
-
-              <!-- EMAIL -->
-              <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-                  <label>Email</label>
-                  <input type="email" name="email" class="form-control" ng-model="vm.registerUser.email" required>
-                  <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-              </div>
-
-              <!-- PASSWORD -->
-              <div class="form-group" ng-class="{ 'has-error' : userForm.Password.$invalid && !userForm.Password.$pristine }">
-                  <label>Password</label>
-                  <input type="Password" name="Password" class="form-control" ng-model="vm.registerUser.Password" required>
-                  <p ng-show="userForm.Password.$invalid && !userForm.Password.$pristine" class="help-block">Enter a valid Password.</p>
-              </div>
-
-              <!-- CONFIRM PASSWORD -->
-              <div class="form-group" ng-class="{ 'has-error' : userForm.ConfirmPassword.$invalid && !userForm.ConfirmPassword.$pristine }">
-                  <label>Confirm Password</label>
-                  <input type="ConfirmPassword" name="ConfirmPassword" class="form-control" ng-model="vm.registerUser.ConfirmPassword" required>
-                  <p ng-show="userForm.ConfirmPassword.$invalid && !userForm.ConfirmPassword.$pristine" class="help-block">Enter a valid ConfirmPassword.</p>
-              </div>
-
-              <!-- <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="vm.registeredUser(vm.registerUser)">Submit</button> -->
-
-        <hr class="colorgraph">
-        <div class="row">
-          <div class="col-xs-12 col-md-6"><a class="btn btn-success btn-block btn-lg"  tabindex="7" ng-click="vm.registeredUser(vm.registerUser)" ng-disabled="userForm.$invalid" >Register</a></div>
+      <h2>Hi! <small>We will be always at your service.</small></h2>
+      <hr class="colorgraph">
+      <form ng-submit="ctrl.registeredUser()" name="myForm">
+        <input type="hidden" ng-model="ctrl.user.id" />
+        <!-- NAME -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" class="username form-control" ng-model="ctrl.user.name" placeholder="Enter your Name" ng-minlength="3"
+            ng-maxlength="8" required>
+          <div class="has-error" ng-show="myForm.name.$dirty">
+            <span ng-show="myForm.name.$error.required" class="help-block">This is a required field</span>
+            <span ng-show="myForm.name.$error.minlength" class="help-block">Minimum length required is 3</span>
+            <span ng-show="myForm.name.$invalid" class="help-block">This field is invalid </span>
+          </div>
         </div>
+
+        <!-- USERNAME -->
+        <div class="form-group">
+          <label for="uname">Username</label>
+          <input type="text" name="uname"  id="uname" class="username form-control" ng-model="ctrl.user.username" placeholder="Enter your Username" ng-minlength="3"
+            ng-maxlength="8" required>
+          <div class="has-error" ng-show="myForm.uname.$dirty">
+            <span ng-show="myForm.uname.$error.required" class="help-block">This is a required field</span>
+            <span ng-show="myForm.uname.$error.minlength" class="help-block">Minimum length required is 3</span>
+            <span ng-show="myForm.uname.$invalid" class="help-block">This field is invalid </span>
+          </div>
+        </div>
+        <!-- ADDRESS -->
+        <div class="form-group">
+          <label for="address">Address</label>
+          <!-- <div class="col-md-7"> -->
+            <input type="text" ng-model="ctrl.user.address" id="address" class="form-control" placeholder="Enter your Address." />
+          <!-- </div> -->
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="email form-control" ng-model="ctrl.user.email" placeholder="Enter your Email" required>
+          <div class="has-error" ng-show="myForm.email.$dirty">
+            <span ng-show="myForm.email.$error.required" class="help-block">This is a required field</span>
+            <span ng-show="myForm.email.$invalid" class="help-block">This field is invalid </span>
+          </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="Password" name="Password" class="form-control" ng-model="ctrl.user.Password" placeholder="Enter your Password" required>
+          <div class="has-error" ng-show="myForm.Password.$dirty">
+            <span ng-show="myForm.Password.$error.required" class="help-block">This is a required field</span>
+            <!-- <span ng-show="myForm.Password.$invalid">This field is invalid </span> -->
+          </div>
+        </div>
+
+        <hr class="colorgraph">
+        <!-- <div class="row">
+          <div class="col-xs-12 col-md-6"><a class="btn btn-success btn-block btn-lg" tabindex="7" ng-click="vm.registeredUser(vm.registerUser)"
+              ng-disabled="userForm.$invalid">Register</a></div>
+        </div> -->
+        
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <input type="submit"  ng-click="vm.registeredUser(ctrl.user)" class="btn btn-primary btn-md" ng-disabled="myForm.$invalid">
+            <button type="button" ng-click="ctrl.reset();" class="btn btn-warning btn-md" ng-disabled="myForm.$pristine">Reset
+              Form</button>
+          </div>
       </form>
     </div>
   </div>
-
-
-
-
