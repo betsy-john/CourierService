@@ -2,7 +2,7 @@ angular.module('CourierServices').controller('registerController', function ($st
   var vm = this;
   vm.registerUser = {};
   vm.registeredUser = (registeredUserDetails) => {
-    registerService.getRegister();
+    registerService.postRegister(registeredUserDetails);
     $state.go('login')
   }
   vm.submitForm = function () {
