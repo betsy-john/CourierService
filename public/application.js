@@ -16,7 +16,7 @@ angular.module('CourierServices').config(function ($stateProvider, $urlRouterPro
     .state('register', {
       url: '/register',
       templateUrl: '/register/register.html',
-      controller: 'registerController as vm'
+      controller: 'registerController as ctrl'
     })
     .state('dashboard', {
       url: '/dashboard',
