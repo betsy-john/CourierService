@@ -16,3 +16,22 @@
   padding-top: 40px;
   border: 1px solid rgb(138, 138, 138)
 }
+.username.ng-valid {
+          background-color: lightgreen;
+      }
+      .username.ng-dirty.ng-invalid-required {
+          background-color: rgb(241, 139, 139);
+      }
+      .username.ng-dirty.ng-invalid-minlength {
+          background-color: rgb(243, 243, 197);
+      }
+ 
+      .email.ng-valid {
+          background-color: lightgreen;
+      }
+      .email.ng-dirty.ng-invalid-required {
+          background-color: rgb(241, 139, 139);
+      }
+      .email.ng-dirty.ng-invalid-email {
+          background-color: rgb(243, 243, 197);;
+      }
