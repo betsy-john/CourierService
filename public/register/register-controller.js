@@ -1,17 +1,19 @@
 angular.module('CourierServices').controller('registerController', function ($scope, $state, registerService) {
-  
-  var self = this;
-  self.user = { name: '', username: '', address: '', email: '',Password: ''}; 
 
+  var self = this;
+  function user() {
+    self.user = { name: '', username: '', phonenumber: '', address: '', email: '', Password: '' };
+  }
+  user();
   self.registeredUser = () => {
     registerService.postRegister(self.user);
-     self.reset();
-    $state.go('login')
-  }
+    self.reset();
+    $state.go('login');
+  };
 
   self.reset = function () {
-    self.user = { name: '', username: '', address: '', email: '',Password: ''};
+    user();
     $scope.myForm.$setPristine(); //reset Form
-  }
+  };
 
 })
