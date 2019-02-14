@@ -19,14 +19,26 @@
         </div>
 
         <!-- USERNAME -->
-        <div class="form-group">
-          <label for="uname">Username</label>
-          <input type="text" name="uname"  id="uname" class="username form-control" ng-model="ctrl.user.username" placeholder="Enter your Username" ng-minlength="3"
-            ng-maxlength="8" required>
-          <div class="has-error" ng-show="myForm.uname.$dirty">
-            <span ng-show="myForm.uname.$error.required" class="help-block">This is a required field</span>
-            <span ng-show="myForm.uname.$error.minlength" class="help-block">Minimum length required is 3</span>
-            <span ng-show="myForm.uname.$invalid" class="help-block">This field is invalid </span>
+        <div class="row col-sm-12">
+          <div class="form-group col-sm-6 col-xs-12" >
+            <label for="uname">Username</label>
+            <input type="text" name="uname" id="uname" class="username form-control" ng-model="ctrl.user.username" placeholder="Enter your Username"
+              ng-minlength="3" ng-maxlength="8" required>
+            <div class="has-error" ng-show="myForm.uname.$dirty">
+              <span ng-show="myForm.uname.$error.required" class="help-block">This is a required field</span>
+              <span ng-show="myForm.uname.$error.minlength" class="help-block">Minimum length required is 3</span>
+              <span ng-show="myForm.uname.$invalid" class="help-block">This field is invalid </span>
+            </div>
+          </div>
+          <div class="form-group col-sm-6 col-xs-12" >
+            <label for="phonenum">We can call you on?</label>
+            <input type="tel" name="phonenum" id="phonenum" class="username form-control" ng-model="ctrl.user.phonenumber" placeholder="We can call you on ?"
+              ng-minlength="10" ng-maxlength="10" required>
+            <div class="has-error" ng-show="myForm.phonenum.$dirty">
+              <span ng-show="myForm.phonenum.$error.required" class="help-block">This is a required field</span>
+              <span ng-show="myForm.phonenum.$error.minlength" class="help-block">Sorry, Invalid Number </span>
+              <span ng-show="myForm.phonenum.$invalid" class="help-block">This field is invalid </span>
+            </div>
           </div>
         </div>
         <!-- ADDRESS -->
