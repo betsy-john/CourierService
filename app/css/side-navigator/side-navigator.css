@@ -1,0 +1,20 @@
+.nav-bar {
+  background-color: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+  padding-left :50px;
+  padding-top: 12px;
+  padding-bottom: 0px;
+  -webkit-background-clip: text;
+  -webkit-animation: hue 60s infinite linear;
+}
+.item {
+  font-weight: 100;
+  color: rgb(7, 7, 6);
+  font-size: 21px;
+  padding-top:4px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.item:hover {
+  color: rgb(97, 48, 48);
+}
+.pointer {cursor: pointer;}

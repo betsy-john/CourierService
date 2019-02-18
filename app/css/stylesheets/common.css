@@ -1,0 +1,15 @@
+.courier-service {
+  min-height: 950px;
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: transparent;
+}
+.login-background {
+  background-image: url("/assets/images/catBack.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+}
+.no-padding {
+padding:0 !important
+}
