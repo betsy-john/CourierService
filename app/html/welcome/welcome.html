@@ -1,0 +1,21 @@
+<div class="loginPage"><header class="site__header island col-sm-12"><div class="wrap row col-sm-12 text-center"><div id="animationSandbox" style="display: block;" class="col-sm-12"><h1 class="site__title mega">Welcome Folks!</h1></div><div class="beta subhead col-sm-12">Little things makes a big difference.</div></div></header><main class="site__content island" role="content"><div class="wrap"><form><div class="text-center"> <button class="butt welcomePageAnimations" ui-sref="login">Login</button> or <button class="butt welcomePageAnimations" ui-sref="register">Register</button></div></form><hr/><p class="metas text-center"> <b>Send, Recieve,Track and Believe</b></p></div></main></div><script src="//code.jquery.com/jquery-1.10.2.min.js"></script><script>
+  function testAnim(x) {
+    $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+      $(this).removeClass();
+    });
+  };
+
+  $(document).ready(function () {
+    $('.welcomePageAnimations').click(function (e) {
+      e.preventDefault();
+      var anim = $('.welcomeAnimations').val();
+      testAnim(anim);
+    });
+
+    $('.welcomeAnimations').change(function () {
+      var anim = $(this).val();
+      testAnim(anim);
+    });
+  });
+
+</script>
