@@ -1,1 +1,0 @@
-angular.module("CourierServices").controller("loginController",function(){this.login={},this.submitLoginform=(o=>{console.log("loginDet",o)})});
