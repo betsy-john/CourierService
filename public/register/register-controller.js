@@ -6,7 +6,10 @@ angular.module('CourierServices').controller('registerController', function ($sc
   }
   user();
   self.registeredUser = () => {
-    registerService.postRegister(self.user);
+    registerService.create(self.user, function (data) {
+      // do something which you want with response
+      console.log("data====> ", data.response)
+    })
     self.reset();
     $state.go('login');
   };

@@ -10,30 +10,13 @@
   registerService.$inject = ['$resource', '$log', '$http', '$q'];
 
   function registerService($resource, $log, $http, $q) {
-    let registerService = {};
-    registerService.postRegister = function (postData) {
-      console.log('data', postData)
-      var deferred = $q.defer();
-      $http({
-        method: 'POST',
-        url: '/api/register/post/newUser',
-        data: postData
-      }).then(function (response) {
-        deferred.resolve(response);
-      }, deferred.reject);
-      return deferred.promise;
-    }
-    registerService.getRegister = function () {
-      var deferred = $q.defer();
-      $http({
-        method: 'GET',
-        url: '/api/register/newUser',
-      }).then(function (response) {
-        deferred.resolve(response);
-      }, deferred.reject);
-      return deferred.promise;
-    }
-    // return $resource('/api/register');
-    return registerService
+    return $resource('/api/register/post/newUser', {}, {
+      query: { method: "GET", isArray: false , transformResponse: function (data) {return {response: data}}},
+      create: { method: "POST", isArray: false , transformResponse: function (data) {return {response: data}}},
+      get: { method: "GET", isArray: false , transformResponse: function (data) {return {response: data}}},
+      remove: { method: "DELETE", isArray: false , transformResponse: function (data) {return {response: data}}},
+      update: { method: "PUT", isArray: false , transformResponse: function (data) {return {response: data}}}
+  });
   }
+
 }());
