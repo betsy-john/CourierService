@@ -2,9 +2,11 @@ var express = require('express');
 var router = express.Router();
 const sequel = require('../databaseFiles/register_user.js');
 
-router.post('/post/newUser', function (req, res, next) {
-  console.log('postthe register user',req)
-  res.send('respond with a resource');
+router.post('/post/newUser', function (req, res) {
+  console.log("res")
+  res.send('correct');
+
+  // res.json({res: 'respond with a resource'});
   // sequel
 
 });
