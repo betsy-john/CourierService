@@ -2,14 +2,11 @@ angular.module('CourierServices').controller('registerController', function ($sc
 
   var self = this;
   function user() {
-    self.user = { name: '', username: '', phonenumber: '', address: '', email: '', Password: '' };
+    self.user = { name: '', userName: '', phoneNumber: '', address: '', email: '', password: '' };
   }
   user();
   self.registeredUser = () => {
-    registerService.create(self.user, function (data) {
-      // do something which you want with response
-      console.log("data====> ", data.response)
-    })
+    registerService.create(self.user);
     self.reset();
     $state.go('login');
   };
